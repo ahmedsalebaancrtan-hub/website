@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'open sans', sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(#009688 0%, #009688 130px, #d9dbd5 130px, #d9dbd5 100%);
+}
+.container{
+  position: relative;
+  width: 1186px;
+  max-width: 100%;
+  height: calc(100vh - 30px);
+  background: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06);
+  display: flex;
+}
+.container .leftSide{
+
+  position: relative;
+  flex: 30%;
+  background: #fff;
+  border-right: 1px solid rgba(0, 0, 0, 0.7);
+}
+.container .rightSide{
+
+  position: relative;
+  flex: 70%;
+  background: #e5ddd5;
+}
+.container .rightSide ::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: url(pattern.png); */
+  opacity: 0.06;
+}
+.header{
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #ededed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+.userimg{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.cover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nav_icons{
+  display: flex;
+}
+.nav_icons li{
+  display: flex;
+  list-style: none;
+  cursor: pointer;
+  color: #51585c;
+  font-size: 1.5rem;
+  margin-left: 22px;
+}
+.search_chat{
+   position: relative;
+   width: 100%;
+   height: 50px;
+   background: #f6f6f6;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0 15px;
+}
+.search_chat div{
+  width: 100%;
+}
+.search_chat div input{
+  width: 100%;
+  outline: none;
+  background: #fff;
+  padding: 6px;
+  height: 38px;
+  border-radius: 30px;
+  font-size: 14px;
+  padding-left: 40px;
+}
+.search_chat div input ::placeholder{
+  color: #bbb;
+}
+.search_chat div ion-icon {
+  position: absolute;
+  left: 30px;
+  top: 14px;
+  font-size: 1.2em;
+
+}
+
+.chatList {
+  position: relative;
+  height: calc(100% - 110px);
+  overflow-y: auto;
+}
+
+.chatList .block {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+.chatList .block.active {
+  background: #ebebeb;
+}
+
+.chatList .block:hover {
+  background: #ebebeb;
+}
+
+.chatList .block .imgbx {
+  position: relative;
+  min-width: 45px;
+  height: 45px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chatList .block .details {
+  position: relative;
+  width: 100%;
+}
+
+.chatList .block .details .listHead {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.chatList .block .details .listHead h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.chatList .block .details .listHead .time {
+  font-size: 0.75em;
+  color: #111; /* dark like WhatsApp */
+}
+.chatList .block.unread .details .listHead .time{
+  color: #06d755;
+}
+
+/* ✅ corrected selector */
+.message_p {
+  display: flex; /* flex so text & badge sit on one line */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message_p p {
+  color: #aaa;
+  font-size: 0.9em;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.message_p b {
+  background: #06d755;
+  color: #fff;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75em;
+  font-weight: 600;
+}
+/* header for right chat area */
+.chatHeader {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  /* background: #ededed; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  border-left: 1px solid rgba(0,0,0,0.06);
+}
+
+.chatUser {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chatUser .userimg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.chatUser .userDetails h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.chatUser .userDetails .status {
+  font-size: 0.8rem;
+  color: #111; /* WhatsApp green */
+}
+
+.chat_icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat_icons li {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #51585c;
+}
+
+/* chat body placeholder */
+.chatBody {
+  position: relative;
+  height: calc(100% - 60px);
+  background: #e5ddd5 url('pattern.png') repeat;
+  opacity: 0.95;
+  overflow-y: auto;
+}
+.chatHeader {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  /* background: #51585c;  */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  border-left: 1px solid rgba(0,0,0,0.06);
+}
+.chatBody {
+  position: relative;
+  height: calc(100% - 60px);
+  /* background: #e5ddd5 url('/pattern.png') repeat; */
+  opacity: 0.95;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.message {
+  position: relative;
+  margin: 10px 0;
+  padding: 10px 15px;
+  background: #fff;
+  border-radius: 10px;
+  max-width: 65%;
+  font-size: 0.95rem;
+  line-height: 1.4em;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.message p {
+  margin: 0;
+}
+
+.message span {
+  display: block;
+  text-align: right;
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 5px;
+}
+
+/* farriimaha aad dirtay */
+.my_message {
+  background: #dcf8c6;  /* WhatsApp green bubble */
+  margin-left: auto;
+  border-bottom-right-radius: 0;
+}
+
+/* farriimaha aad ka hesho */
+.friend_message {
+  background: #fff;
+  margin-right: auto;
+  border-bottom-left-radius: 0;
+}
+.chatFooter {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  gap: 15px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.chatFooter ion-icon {
+  font-size: 1.6rem;
+  color: #51585c;
+  cursor: pointer;
+}
+
+.chatFooter input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
